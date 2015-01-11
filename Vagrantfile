@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "chef/centos-7.0"
+  config.vm.box = "chef/centos-6.5"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -74,5 +74,5 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with chef_zero provisioner.
   config.vm.provision :chef_zero do |chef|
     chef.add_recipe 'php53::default'
-  endw
+  end
 end
