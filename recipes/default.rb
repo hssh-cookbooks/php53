@@ -41,9 +41,10 @@ execute 'Enable EPEL repository' do
   not_if { File.exists?('/etc/yum.repos.d/epel.repo') }
 end
 
+# Setup apache2
+include_recipe 'apache2'
+
 packages = %w(
-  httpd
-  links
   php
   php-devel
   php-gd
@@ -57,17 +58,6 @@ packages = %w(
 packages.each do |p|
   package p do
   end
-end
-
-# Setup apache
-service 'httpd' do
-  supports :status => true, :restart => true, :reload => true
-  action [:enable, :start]
-end
-
-template '/etc/httpd/conf/httpd.conf' do
-  source 'httpd.conf.erb'
-  notifies :restart, 'service[httpd]'
 end
 
 # Setup php
