@@ -63,13 +63,13 @@ end
 # Setup php
 template '/etc/php.ini' do
   source 'php.ini.erb'
-  variables settings: node['php53']['ini']
+  variables ini: node['php53']['ini']
   notifies :restart, 'service[httpd]'
 end
 
 template '/etc/php.d/xdebug.ini' do
   source 'php.xdebug.ini.erb'
-  variables settings: node['php53']['ini']
+  variables ini: node['php53']['ini']
   notifies :restart, 'service[httpd]'
 end
 
