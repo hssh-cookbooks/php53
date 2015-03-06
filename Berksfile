@@ -1,5 +1,3 @@
-source "https://supermarket.getchef.com"
+source "https://berkshelf-api-hssh.herokuapp.com"
 
 metadata
-
-cookbook 'apache2', git: 'https://github.com/hssh/cookbooks.apache2.git'

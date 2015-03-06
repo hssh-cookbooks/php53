@@ -6,3 +6,5 @@ description      'Installs/Configures php53'
 long_description 'Installs/Configures php53'
 version          '0.1.0'
 supports         'centos', '6.5'
+
+depends 'apache2'
